@@ -1,3 +1,5 @@
+package MyApp;
+
 
 import java.awt.Color;
 import internalPage.*;
@@ -45,23 +47,26 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         userPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        taskPanel = new javax.swing.JPanel();
+        account = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         projectPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         dashPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        taskPanel = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         mainDesktop = new javax.swing.JDesktopPane();
         header = new javax.swing.JPanel();
+        minimize = new javax.swing.JLabel();
+        close = new javax.swing.JLabel();
         SearchButton = new javax.swing.JButton();
         SearchField = new javax.swing.JTextField();
-        settingHeader = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(null);
@@ -106,24 +111,24 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2.setText("USER PAGE");
         userPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 110, 39));
 
-        taskPanel.setBackground(new java.awt.Color(153, 209, 149));
-        taskPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        account.setBackground(new java.awt.Color(153, 209, 149));
+        account.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                taskPanelMouseClicked(evt);
+                accountMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                taskPanelMouseEntered(evt);
+                accountMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                taskPanelMouseExited(evt);
+                accountMouseExited(evt);
             }
         });
-        taskPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        account.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("TASK");
-        taskPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 110, 39));
+        jLabel3.setText("ACCOUNT");
+        account.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 110, 39));
 
         projectPanel.setBackground(new java.awt.Color(153, 209, 149));
         projectPanel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -166,30 +171,43 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel7.setText("DASHBOARD");
         dashPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 110, 39));
 
+        taskPanel.setBackground(new java.awt.Color(153, 209, 149));
+        taskPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                taskPanelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                taskPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                taskPanelMouseExited(evt);
+            }
+        });
+        taskPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("TASK");
+        taskPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 110, 39));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(taskPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(projectPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(userPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(adminPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dashPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(dashPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+            .addComponent(userPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(adminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(projectPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(taskPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(account, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(dashPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dashPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -198,7 +216,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(projectPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(taskPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(account, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
@@ -224,6 +244,28 @@ public class Dashboard extends javax.swing.JFrame {
         header.setBackground(new java.awt.Color(153, 204, 255));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        minimize.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        minimize.setForeground(new java.awt.Color(255, 255, 255));
+        minimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimize.setText("—");
+        minimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeMouseClicked(evt);
+            }
+        });
+        header.add(minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 30, -1));
+
+        close.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        close.setForeground(new java.awt.Color(255, 255, 255));
+        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        close.setText("X");
+        close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeMouseClicked(evt);
+            }
+        });
+        header.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 30, -1));
+
         SearchButton.setText("Search");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,39 +281,6 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         header.add(SearchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
-
-        settingHeader.setBackground(new java.awt.Color(153, 209, 149));
-        settingHeader.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                settingHeaderMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                settingHeaderMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                settingHeaderMouseExited(evt);
-            }
-        });
-
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-gear-100.png"))); // NOI18N
-
-        javax.swing.GroupLayout settingHeaderLayout = new javax.swing.GroupLayout(settingHeader);
-        settingHeader.setLayout(settingHeaderLayout);
-        settingHeaderLayout.setHorizontalGroup(
-            settingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingHeaderLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6))
-        );
-        settingHeaderLayout.setVerticalGroup(
-            settingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingHeaderLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        header.add(settingHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, -1, 90));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -347,18 +356,18 @@ public class Dashboard extends javax.swing.JFrame {
         mainDesktop.add(pp).setVisible(true);
     }//GEN-LAST:event_projectPanelMouseClicked
 
-    private void taskPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_taskPanelMouseEntered
-        taskPanel.setBackground(bodycolor);
-    }//GEN-LAST:event_taskPanelMouseEntered
+    private void accountMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseEntered
+        account.setBackground(bodycolor);
+    }//GEN-LAST:event_accountMouseEntered
 
-    private void taskPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_taskPanelMouseExited
-        taskPanel.setBackground(navcolor);
-    }//GEN-LAST:event_taskPanelMouseExited
+    private void accountMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseExited
+        account.setBackground(navcolor);
+    }//GEN-LAST:event_accountMouseExited
 
-    private void taskPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_taskPanelMouseClicked
-        TaskPage tp = new TaskPage();
-        mainDesktop.add(tp).setVisible(true);
-    }//GEN-LAST:event_taskPanelMouseClicked
+    private void accountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseClicked
+        SettingPage set = new SettingPage();
+        mainDesktop.add(set).setVisible(true);
+    }//GEN-LAST:event_accountMouseClicked
 
     private void dashPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashPanelMouseEntered
         dashPanel.setBackground(bodycolor);
@@ -373,18 +382,26 @@ public class Dashboard extends javax.swing.JFrame {
         mainDesktop.add(dp).setVisible(true);
     }//GEN-LAST:event_dashPanelMouseClicked
 
-    private void settingHeaderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingHeaderMouseClicked
-        SettingPage sp = new SettingPage();
-        mainDesktop.add(sp).setVisible(true);
-    }//GEN-LAST:event_settingHeaderMouseClicked
+    private void taskPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_taskPanelMouseClicked
+         TaskPage tp = new TaskPage();
+        mainDesktop.add(tp).setVisible(true);
+    }//GEN-LAST:event_taskPanelMouseClicked
 
-    private void settingHeaderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingHeaderMouseEntered
-        settingHeader.setBackground(bodycolor);
-    }//GEN-LAST:event_settingHeaderMouseEntered
+    private void taskPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_taskPanelMouseEntered
+        taskPanel.setBackground(bodycolor);
+    }//GEN-LAST:event_taskPanelMouseEntered
 
-    private void settingHeaderMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingHeaderMouseExited
-        settingHeader.setBackground(navcolor);
-    }//GEN-LAST:event_settingHeaderMouseExited
+    private void taskPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_taskPanelMouseExited
+        taskPanel.setBackground(navcolor);
+    }//GEN-LAST:event_taskPanelMouseExited
+
+    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_closeMouseClicked
+
+    private void minimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeMouseClicked
+        setState(ICONIFIED);
+    }//GEN-LAST:event_minimizeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -424,23 +441,25 @@ public class Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton SearchButton;
     private javax.swing.JTextField SearchField;
+    private javax.swing.JPanel account;
     private javax.swing.JPanel adminPanel;
+    private javax.swing.JLabel close;
     private javax.swing.JPanel dashPanel;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JDesktopPane mainDesktop;
+    private javax.swing.JLabel minimize;
     private javax.swing.JPanel projectPanel;
-    private javax.swing.JPanel settingHeader;
     private javax.swing.JPanel taskPanel;
     private javax.swing.JPanel userPanel;
     // End of variables declaration//GEN-END:variables

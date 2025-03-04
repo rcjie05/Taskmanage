@@ -8,6 +8,8 @@ package internalPage;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import MyApp.*;
+
 
 /**
  *
@@ -364,6 +366,8 @@ public class SettingPage extends javax.swing.JInternalFrame {
     private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
         mainFrame.dispose();
+        LoginForm lf = new LoginForm();
+        lf.setVisible(true);
     }//GEN-LAST:event_LogoutMouseClicked
 
 
